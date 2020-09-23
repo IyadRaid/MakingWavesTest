@@ -1,0 +1,131 @@
+﻿@model  IEnumerable<MakingWavesTest.Models.ViewModels.GroupedColorsViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <h1>Divided colors</h1>
+    @if (Model == null)
+    {
+        <h3 class="alert-danger">Something is wrong and there was no colors to display.</h3>
+    }
+    @if (Model != null)
+    {
+        <div class="container-fluid">
+            <div class="text-center">
+                <h2>Group 1</h2>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Id</th>
+                            <th scope="col" class="text-center">Name</th>
+                            <th scope="col" class="text-center">HexCode</th>
+                            <th scope="col" class="text-center">Color</th>
+                            <th scope="col" class="text-center">Group</th>
+                            <th scope="col" class="text-center">Pantone value</th>
+                            <th scope="col" class="text-center">Year</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Where(g => g.group == 1))
+                        {
+                            <tr class="text-center">
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Color</td>
+                                <td style="background-color: @item.Color" />
+                                <td>@item.group</td>
+                                <td>@item.Pantone_Value</td>
+                                <td>@item.Year</td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="text-center">
+                <h2>Group 2</h2>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Id</th>
+                            <th scope="col" class="text-center">Name</th>
+                            <th scope="col" class="text-center">HexCode</th>
+                            <th scope="col" class="text-center">Color</th>
+                            <th scope="col" class="text-center">Group</th>
+                            <th scope="col" class="text-center">Pantone value</th>
+                            <th scope="col" class="text-center">Year</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Where(g => g.group == 2))
+                        {
+                            <tr class="text-center">
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Color</td>
+                                <td style="background-color: @item.Color" />
+                                <td>@item.group</td>
+                                <td>@item.Pantone_Value</td>
+                                <td>@item.Year</td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="text-center">
+                <h2>Group 3</h2>
+            </div>
+            <div>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">Id</th>
+                                <th scope="col" class="text-center">Name</th>
+                                <th scope="col" class="text-center">HexCode</th>
+                                <th scope="col" class="text-center">Color</th>
+                                <th scope="col" class="text-center">Group</th>
+                                <th scope="col" class="text-center">Pantone value</th>
+                                <th scope="col" class="text-center">Year</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Where(g => g.group == 3))
+                            {
+                                <tr class="text-center">
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Color</td>
+                                    <td style="background-color: @item.Color" />
+                                    <td>@item.group</td>
+                                    <td>@item.Pantone_Value</td>
+                                    <td>@item.Year</td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
